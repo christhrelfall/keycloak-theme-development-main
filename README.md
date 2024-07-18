@@ -32,3 +32,7 @@ The jar can be extracted with this command:
 Log in as admin. Therefore you can find your login data in the .env file.
 
 In the admin console you can go in your Realm settings to the "Themes" part. There you can choose the tailwind-example for your login screen and confirm it with "save".
+
+## Run Tailwind Watch
+
+npx tailwindcss -i ./styles/styles.css -o ./themes/tailwind-example/resources/css/styles.css --watch
