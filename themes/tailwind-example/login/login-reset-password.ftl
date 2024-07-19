@@ -1,40 +1,33 @@
 <#import "template.ftl" as layout>
-dsfdfdsfdsdsf
-<@layout.registrationLayout displayInfo=true displayMessage=!messagesPerField.existsError('username'); section>
+<@layout.registrationLayout displayInfo=true; section>
+<div>
     <#if section = "header">
-        ${msg("emailForgotTitle")}fdfgdfgdfg
-    <#elseif section = "form">
-        <form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-            <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="username" class="${properties.kcLabelClass!}"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="username" name="username" class="${properties.kcInputClass!}" autofocus value="${(auth.attemptedUsername!'')}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
-                    <#if messagesPerField.existsError('username')>
-                        <span id="input-error-username" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.get('username'))?no_esc}
-                        </span>
-                    </#if>
-                </div>
-            </div>
-            <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                        <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
-                    </div>
-                </div>
-
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}"/>
-                </div>
-            </div>
-        </form>
+        ${msg("emailForgotTitle")}
     <#elseif section = "info" >
-        <#if realm.duplicateEmailsAllowed>
-            ${msg("emailInstructionUsername")}
-        <#else>
-            ${msg("emailInstruction")}
-        </#if>
+        ${msg("emailInstruction")}
+    <#elseif section = "form">
+        <div class="mt-10">
+            <form id="kc-reset-password-form" class="${properties.kcFormClass!} space-y-6" action="${url.loginAction}" method="post">
+                <div class="${properties.kcFormGroupClass!}">
+                    <p style="block text-paragraph tracking-paragraph text-black">${msg("usernameOrEmailLabel")}</p>
+                
+                        <#if auth?has_content && auth.showUsername()>
+                        <div class="mt-1 relative">
+                            <input type="text" id="username" name="username" autofocus value="${auth.attemptedUsername}" class="appearance-none w-full px-3 py-2 rounded focus:outline-none border <#if messagesPerField.existsError('username','password')>border-red-500 placeholder-red-500 focus:ring-red-500 focus:border-red-500<#else>border-gray-300 placeholder-gray-400 focus:ring-gray-500 focus:border-gray-500</#if>"/>
+                        </div>
+                        <#else>
+                        <div class="mt-1 relative">
+                            <input type="text" id="username" name="username" autofocus class="appearance-none w-full px-3 py-2 rounded focus:outline-none border <#if messagesPerField.existsError('username','password')>border-red-500 placeholder-red-500 focus:ring-red-500 focus:border-red-500<#else>border-gray-300 placeholder-gray-400 focus:ring-gray-500 focus:border-gray-500</#if>"/>
+                        </div>
+                        </#if>
+        
+                </div>
+                <button class="w-full flex justify-center rounded py-2 px-4 border-4 uppercase text-button font-semibold text-white bg-blue-700 border-none hover:bg-blue-800" type="submit">${msg("doSubmit2")}</button>
+                <div class="mt-16 flex justify-center">
+                    <a href="${url.loginUrl}" class="text-small tracking-paragraph text-gray-500 hover:text-blue-700">${kcSanitize(msg("backToLogin"))?no_esc}</a>  
+                </div>
+            </form>
+        </div>
     </#if>
+</div>
 </@layout.registrationLayout>

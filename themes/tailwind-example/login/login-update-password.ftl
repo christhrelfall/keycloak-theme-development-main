@@ -1,9 +1,9 @@
-<#import "tailwind-template.ftl" as layout>
+<#import "templateOLD.ftl" as layout>
 <#import "password-commons.ftl" as passwordCommons>
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('password','password-confirm'); section>
     <#if section = "header">
         ${msg("updatePasswordTitle")}
-    <#elseif section = "form">
+    <#elseif section = "main">
         <form id="kc-passwd-update-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
             <div class="${properties.kcFormGroupClass!}">
                 <label for="password-new" class="${properties.kcLabelClass!}">
