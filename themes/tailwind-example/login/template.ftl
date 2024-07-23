@@ -81,13 +81,13 @@
 				<nav class="flex flex-wrap justify-center" aria-label="Footer">
 					<div class="px-5 py-2">
 						<a href="${properties.kcTermsLink!}" target="_blank" rel="noopener noreferrer"
-							class="text-small text-gray-500 hover:text-blue-700 hover-pointer">
+							class="${properties.kcLinkStyle!}">
 							Terms Notice
 						</a>
 					</div>
 					<div class="px-5 py-2">
 						<a href="${properties.kcPrivacyLink!}" target="_blank" rel="noopener noreferrer"
-							class="text-small text-gray-500 hover:text-blue-700 hover-pointer">
+							class="${properties.kcLinkStyle!}">
 							Privacy Policy
 						</a>
 					</div>
@@ -96,8 +96,11 @@
 
 		</div>
 
-		<div class="-bg-[#41bdeb] bg-blue-700 h-full w-full hidden lg:block">
-			
+		<div class="bg-[#F4F4FC] hidden lg:flex items-center justify-center">
+			<div class="text-center space-y-3">	
+				<img src="${url.resourcesPath}/img/ServicesOpsLogin.png" alt="" class="max-w-[25vw] mx-auto">
+				<h1 class="text-4xl font-bold">Recording a service has <br> never been so quick and easy</h1>
+			</div>
 		</div>
 			
 	</body>
