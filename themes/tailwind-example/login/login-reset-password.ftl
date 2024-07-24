@@ -9,15 +9,11 @@
         <div class="mt-10">
             <form id="kc-reset-password-form" class="${properties.kcFormClass!} space-y-6" action="${url.loginAction}" method="post">
                 <div class="${properties.kcFormGroupClass!}">
-                    <label class="${properties.kcTextStyle!}">${msg("usernameOrEmailLabel")}</label>
+                    <label class="${properties.kcLabelStyle!}" for="username">${msg("usernameOrEmailLabel")}</label>
                     <#if auth?has_content && auth.showUsername()>
-                    <div class="mt-1 relative">
                         <input type="text" id="username" name="username" autofocus value="${auth.attemptedUsername}" class="${properties.kcInputBaseStyle!}<#if messagesPerField.existsError('username','password')>${properties.kcInputValidationStyle!}<#else>${properties.kcInputValidationElseStyle!}</#if>"/>
-                    </div>
                     <#else>
-                    <div class="mt-1 relative">
                         <input type="text" id="username" name="username" autofocus class="${properties.kcInputBaseStyle!}<#if messagesPerField.existsError('username','password')>${properties.kcInputValidationStyle!}<#else>${properties.kcInputValidationElseStyle!}</#if>"/>
-                    </div>
                     </#if>
                 </div>
                 <button class="${properties.kcButtonPrimaryStyle!}" type="submit">${msg("doSubmit2")}</button>

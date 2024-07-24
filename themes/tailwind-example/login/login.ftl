@@ -11,17 +11,13 @@
 						<label for="username" class="${properties.kcLabelStyle!}">
 							${msg("usernameOrEmail")}
 						</label>
-						<div class="mt-1 relative">
-							<input tabindex="1" id="username" name="username" value="${(username!'')}" type="text" autofocus autocomplete="off" class="${properties.kcInputBaseStyle!}<#if messagesPerField.existsError('username','password')>${properties.kcInputValidationStyle!}<#else>${properties.kcInputValidationElseStyle!}</#if>" aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>">
-						</div>
+						<input tabindex="1" id="username" name="username" value="${(username!'')}" type="text" autofocus autocomplete="off" class="${properties.kcInputBaseStyle!}<#if messagesPerField.existsError('username','password')>${properties.kcInputValidationStyle!}<#else>${properties.kcInputValidationElseStyle!}</#if>" aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>">
 					</div>
-					<div class="space-y-1">
-					<label for="password" class="${properties.kcLabelStyle!}">
-						${msg("password")}
-					</label>
-					<div class="mt-1">
+					<div>
+						<label for="password" class="${properties.kcLabelStyle!}">
+							${msg("password")}
+						</label>
 						<input tabindex="2" id="password" name="password" type="password" aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>" autocomplete="current-password" class="${properties.kcInputBaseStyle!}<#if messagesPerField.existsError('username','password')>${properties.kcInputValidationStyle!}<#else>${properties.kcInputValidationElseStyle!}</#if>">
-					</div>
 					</div>
 					<#if realm.rememberMe || realm.resetPasswordAllowed>
 						<div class="flex items-center justify-between">

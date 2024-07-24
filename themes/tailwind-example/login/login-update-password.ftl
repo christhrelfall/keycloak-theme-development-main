@@ -10,24 +10,16 @@
             <input type="password" id="password" name="password" autocomplete="current-password" style="display:none;"/>
             
             <div class="${properties.kcFormGroupClass!}">
-                <label for="password-new" class="${properties.kcLabelStyle!}">${msg("passwordNew")}</label>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="password" id="password-new" name="password-new" class="${properties.kcInputBaseStyle!}<#if messagesPerField.existsError('username','password')>${properties.kcInputValidationStyle!}<#else>${properties.kcInputValidationElseStyle!}</#if>" aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>" autofocus autocomplete="new-password" />
-                </div>
+                <label for="password-new" class="mb-2 ${properties.kcLabelStyle!}">${msg("passwordNew")}</label>
+                <input type="password" id="password-new" name="password-new" class="${properties.kcInputBaseStyle!}<#if messagesPerField.existsError('username','password')>${properties.kcInputValidationStyle!}<#else>${properties.kcInputValidationElseStyle!}</#if>" aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>" autofocus autocomplete="new-password" />
 			</div>
             
             <div class="${properties.kcFormGroupClass!}">
                 <label for="password-confirm" class="${properties.kcLabelStyle!}">${msg("passwordConfirm")}</label>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="password" id="password-confirm" name="password-confirm" class="${properties.kcInputBaseStyle!}<#if messagesPerField.existsError('username','password')>${properties.kcInputValidationStyle!}<#else>${properties.kcInputValidationElseStyle!}</#if>" autocomplete="new-password" />
-                </div>
+                <input type="password" id="password-confirm" name="password-confirm" class="${properties.kcInputBaseStyle!}<#if messagesPerField.existsError('username','password')>${properties.kcInputValidationStyle!}<#else>${properties.kcInputValidationElseStyle!}</#if>" autocomplete="new-password" />
             </div>
             
             <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                    </div>
-                </div>
                 <button type="submit" class="${properties.kcButtonPrimaryStyle}">
                     ${msg("doSubmit2")}
                 </button>
