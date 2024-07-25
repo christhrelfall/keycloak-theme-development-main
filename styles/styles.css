@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://use.typekit.net/bry2lcg.css");
+
+body {
+    font-family: "roboto", sans-serif;
+}

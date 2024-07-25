@@ -8,11 +8,11 @@
         <ol id="kc-totp-settings" class="list-decimal list-outside pl-5 my-10 space-y-3">
             <li>
                 <p class="mb-3">${msg("loginTotpStep1")}</p>    
-                <ul id="kc-totp-supported-apps" class="">
+        
                     <#list totp.supportedApplications as app>
-                    <li>${msg(app)}</li>
+                    ${msg(app)},&nbsp;
                     </#list>
-                </ul>
+                
             </li>
 
             <#if mode?? && mode = "manual">
