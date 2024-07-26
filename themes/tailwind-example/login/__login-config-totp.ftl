@@ -3,34 +3,28 @@
 <@layout.registrationLayout; section>
 
     <#if section = "header">
-        <!-- ${msg("loginTotpTitle")} --> Set up OTP authentication
+        ${msg("loginTotpTitle")}
     <#elseif section = "form">
-        <div class="my-10 space-y-6">
-
-            <div>
-                <p class="mb-3">${msg("loginTotpStep1")} (such as
+        <ol id="kc-totp-settings" class="list-decimal list-outside pl-5 my-10 space-y-3">
+            <li>
+                <p class="mb-3">${msg("loginTotpStep1")}</p>    
+        
                     <#list totp.supportedApplications as app>
-                        <#if app?is_last>
-                            ${msg(app)})
-                        <#else>
-                            ${msg(app)},
-                        </#if>
+                    ${msg(app)},&nbsp;
                     </#list>
-                    <#if mode?? && mode != "manual">
-                      ${msg("loginTotpStep2")}
-                    </#if>
-                </p>    
-            </div>
-                   
+                
+            </li>
+
             <#if mode?? && mode = "manual">
-                <div>
-                    <p class="mb-1">${msg("loginTotpManualStep2")}</p>
-                    <p><span id="kc-totp-secret-key" class="p-3 bg-slate-100 rounded my-2 block">${totp.totpSecretEncoded}</span></p>
+                <li>
+                    <p>${msg("loginTotpManualStep2")}</p>
+                    <p><span id="kc-totp-secret-key">${totp.totpSecretEncoded}</span></p>
                     <p><a href="${totp.qrUrl}" id="mode-barcode" class="${properties.kcLinkStyle!}">${msg("loginTotpScanBarcode")}</a></p>
-                </div>
-                <div>
-                    <p class="mb-1">${msg("loginTotpManualStep3")}</p>
-                    <ul  class="p-3 bg-slate-100 rounded my-2 block">
+                </li>
+                <li>
+                    <p>${msg("loginTotpManualStep3")}</p>
+                    <p>
+                    <ul>
                         <li id="kc-totp-type">${msg("loginTotpType")}: ${msg("loginTotp." + totp.policy.type)}</li>
                         <li id="kc-totp-algorithm">${msg("loginTotpAlgorithm")}: ${totp.policy.getAlgorithmKey()}</li>
                         <li id="kc-totp-digits">${msg("loginTotpDigits")}: ${totp.policy.digits}</li>
@@ -41,16 +35,19 @@
                         </#if>
                     </ul>
                     </p>
-                </div>
+                </li>
             <#else>
-                <div>
-                    
-                    <img id="kc-totp-secret-qr-code" src="data:image/png;base64, ${totp.totpSecretQrCode}" alt="Figure: Barcode" class="max-w-40 -ml-3">
-                    <h2 class="text-lg mb-2">Can't scan the QR code?</h2>       
+                <li>
+                    <p>${msg("loginTotpStep2")}</p>
+                    <img id="kc-totp-secret-qr-code" src="data:image/png;base64, ${totp.totpSecretQrCode}" alt="Figure: Barcode" class="max-w-40">
                     <p><a href="${totp.manualUrl}" id="mode-manual" class="${properties.kcLinkStyle!}">${msg("loginTotpUnableToScan")}</a></p>
-                </div>
+                </li>
             </#if>
-            </div>
+            <li>
+                <p class="mb-3">${msg("loginTotpStep3")}</p>
+                <p>${msg("loginTotpStep3DeviceName")}</p>
+            </li>
+        </ol>
 
         <form action="${url.loginAction}" class="${properties.kcFormClass!} space-y-6" id="kc-totp-settings-form" method="post">
             <div class="${properties.kcFormGroupClass!}">

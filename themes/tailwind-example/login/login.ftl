@@ -23,8 +23,8 @@
 						<div class="flex items-center justify-between">
 							<#if realm.rememberMe>
 								<div class="flex items-center">
-									<input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" class="h-4 w-4 text-gray-500 focus:ring-gray-500 border-gray-400 rounded">
-									<label for="rememberMe" class="ml-2 ${properties.kcLabelStyle!}">
+									<input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" class="${properties.kcCheckBoxStyle!}">
+									<label for="rememberMe" class="${properties.kcLabelStyle!}">
 										${msg("rememberMe")}
 									</label>
 								</div>
