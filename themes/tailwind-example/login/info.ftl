@@ -12,11 +12,11 @@
         <#if skipLink??>
         <#else>
             <#if pageRedirectUri?has_content>
-                <p><a href="${pageRedirectUri}" class="text-small tracking-paragraph text-gray-500 hover:text-blue-700">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+                <p><a href="${pageRedirectUri}" class="${properties.kcLinkStyle!}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
             <#elseif actionUri?has_content>
-                <p><a href="${actionUri}" class="text-small tracking-paragraph text-gray-500 hover:text-blue-700">${kcSanitize(msg("proceedWithAction"))?no_esc}</a></p>
+                <p><a href="${actionUri}" class="${properties.kcLinkStyle!}">${kcSanitize(msg("proceedWithAction"))?no_esc}</a></p>
             <#elseif (client.baseUrl)?has_content>
-                <p><a href="${client.baseUrl}" class="text-small tracking-paragraph text-gray-500 hover:text-blue-700">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
+                <p><a href="${client.baseUrl}" class="${properties.kcLinkStyle!}">${kcSanitize(msg("backToApplication"))?no_esc}</a></p>
             </#if>
         </#if>
     </div>
