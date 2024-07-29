@@ -21,8 +21,8 @@
 
 		<div class="bg-[#F4F4FC] hidden xl:flex items-center justify-center">
 			<div class="text-center space-y-3">	
-				<img src="${url.resourcesPath}/img/ServicesOpsLogin.png" alt="" class="max-w-[25vw] mx-auto">
-				<h1 class="text-4xl font-medium font-serif">Recording a service has <br> never been so quick and easy</h1>
+				<img src="${url.resourcesPath + properties.kcHeroImage!}" alt="" class="max-w-[25vw] mx-auto">
+				<h1 class="text-4xl font-medium font-serif">${properties.kcHeroContent?no_esc}</h1>
 			</div>
 		</div>
 
@@ -31,7 +31,7 @@
 			<div class="max-w-[660px] xl:max-w-none mx-auto flex flex-col justify-between justify-center py-12 px-[5vw] min-h-full">
 	
 				<header class="">
-					<img class="mx-auto w-[200px]" src="${url.resourcesPath}/img/ps_logo.svg" alt="" />
+					<img class="mx-auto w-[200px]" src="${url.resourcesPath + properties.kcLogo}" alt="" />
 				</header>
 				
 				<section class="py-16">
@@ -81,10 +81,10 @@
 				<footer class="">
 					<nav class="flex flex-wrap justify-center" aria-label="Footer">
 						<div class="px-5 py-2">
-							<a href="${properties.kcTermsLink!}" target="_blank" rel="noopener noreferrer" class="${properties.kcLinkStyle!}"> Terms Notice</a>
+							<a href="${properties.kcTermsLink!}" target="_blank" rel="noopener noreferrer" class="${properties.kcLinkStyle!}">${properties.kcTerms!}</a>
 						</div>
 						<div class="px-5 py-2">
-							<a href="${properties.kcPrivacyLink!}" target="_blank" rel="noopener noreferrer" class="${properties.kcLinkStyle!}">Privacy Policy</a>
+							<a href="${properties.kcPrivacyLink!}" target="_blank" rel="noopener noreferrer" class="${properties.kcLinkStyle!}">${properties.kcPrivacy!}</a>
 						</div>
 					</nav>
 				</footer>

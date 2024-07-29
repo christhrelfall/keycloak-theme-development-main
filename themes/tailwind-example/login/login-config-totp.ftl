@@ -11,9 +11,11 @@
                 <p class="mb-3">${msg("loginTotpStep1")} (such as
                     <#list totp.supportedApplications as app>
                         <#if app?is_last>
-                            ${msg(app)})
+                            or ${msg(app)})
+                        <#elseif app?is_first>
+                            ${msg(app)}
                         <#else>
-                            ${msg(app)},
+                        , ${msg(app)}
                         </#if>
                     </#list>
                     <#if mode?? && mode != "manual">
