@@ -35,4 +35,4 @@ In the admin console you can go in your Realm settings to the "Themes" part. The
 
 ## Run Tailwind Watch
 
-npx tailwindcss -i ./styles/styles.css -o ./themes/tailwind-example/resources/css/styles.css --watch
+npx tailwindcss -i ./styles/styles.css -o ./themes/tailwind-example/login/resources/css/styles.css --watch

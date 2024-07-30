@@ -1,7 +1,7 @@
 <#macro registrationLayout displayInfo=false displayMessage=true displayRequiredFields=false displayWide=false
 	showAnotherWayIfPresent=true>
 	<!DOCTYPE html>
-	<html class="h-full">
+	<html class="h-full text-sm">
 
 	<head>
 		<meta charset="utf-8">
@@ -17,18 +17,18 @@
 		<link rel="stylesheet" href="https://use.typekit.net/bry2lcg.css">
 		<link rel="stylesheet" href="${url.resourcesPath}/css/styles.css" />
 	</head>
-	<body class="xl:grid grid-flow-col auto-cols-[7fr_3.5fr] h-full text-slate-800">
+	<body class="lg:grid grid-flow-col grid-cols-2 text-slate-800 h-screen">
 
-		<div class="bg-[#F4F4FC] hidden xl:flex items-center justify-center">
+		<div class="bg-[#F4F4FC] hidden lg:flex items-center justify-center p-8 h-screen l:overflow-y-scroll">
 			<div class="text-center space-y-3">	
 				<img src="${url.resourcesPath + properties.kcHeroImage!}" alt="" class="max-w-[25vw] mx-auto">
-				<h1 class="text-4xl font-medium font-serif">${properties.kcHeroContent?no_esc}</h1>
+				<h1 class="text-2xl xl:text-4xl font-medium font-serif">${properties.kcHeroContent?no_esc}</h1>
 			</div>
 		</div>
 
-		<div class="xl:overflow-y-scroll h-full">
+		<div class="lg:overflow-y-scroll h-screen px-8">
 
-			<div class="max-w-[660px] xl:max-w-none mx-auto flex flex-col justify-between justify-center py-12 px-[5vw] min-h-full">
+			<div class="max-w-[400px] w-full mx-auto box-border flex flex-col justify-between justify-center py-12 min-h-full">
 	
 				<header class="">
 					<img class="mx-auto w-[200px]" src="${url.resourcesPath + properties.kcLogo}" alt="" />
