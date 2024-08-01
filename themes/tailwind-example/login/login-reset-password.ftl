@@ -17,7 +17,7 @@
                     </#if>
                 </div>
                 <button class="${properties.kcButtonPrimaryStyle!}" type="submit">${msg("doSubmit2")}</button>
-                <div class="mt-16 flex justify-center">
+                <div class="flex justify-center">
                     <a href="${url.loginUrl}" class="${properties.kcLinkStyle!}">${kcSanitize(msg("backToLogin"))?no_esc}</a>  
                 </div>
             </form>
