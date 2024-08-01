@@ -1,7 +1,7 @@
 <#macro registrationLayout displayInfo=false displayMessage=true displayRequiredFields=false displayWide=false
 	showAnotherWayIfPresent=true>
 	<!DOCTYPE html>
-	<html class="h-full text-sm">
+	<html class="h-full text-sm 2xl:text-base">
 
 	<head>
 		<meta charset="utf-8">
@@ -21,7 +21,7 @@
 
 		<div class="bg-[#F4F4FC] hidden lg:flex items-center justify-center p-8 h-screen l:overflow-y-scroll">
 			<div class="text-center space-y-3">	
-				<img src="${url.resourcesPath + properties.kcHeroImage!}" alt="" class="max-w-[25vw] mx-auto">
+				<img src="${url.resourcesPath + properties.kcHeroImage!}" alt="" class="w-[25vw] max-w-[500px] mx-auto">
 				<h1 class="text-2xl xl:text-4xl font-medium font-serif">${properties.kcHeroContent?no_esc}</h1>
 			</div>
 		</div>
