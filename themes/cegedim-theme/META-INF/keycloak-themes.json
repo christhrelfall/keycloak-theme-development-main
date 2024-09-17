@@ -1,0 +1,6 @@
+{
+    "themes": [{
+        "name" : "cegedim-theme",
+        "types": [ "login" ]
+    }]
+}
